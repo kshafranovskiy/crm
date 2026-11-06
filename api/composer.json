@@ -83,5 +83,9 @@
             "allow-contrib": false,
             "require": "8.1.*"
         }
+    },
+    "require-dev": {
+        "symfony/stopwatch": "8.1.*",
+        "symfony/web-profiler-bundle": "8.1.*"
     }
 }
