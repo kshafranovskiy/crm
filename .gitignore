@@ -1,0 +1,22 @@
+# IDE et éditeurs
+.idea/
+.vscode/
+*.swp
+
+# Système
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Front React (à partir du module 10)
+/front/node_modules/
+/front/dist/
+/front/.env.local
+/front/.env.*.local
+/front/coverage/
+
+# Serveur MCP Rust (à partir du module 15)
+/mcp/target/
