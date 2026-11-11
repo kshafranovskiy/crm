@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ContactRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
@@ -11,20 +12,26 @@ class Contact
   #[ORM\Id]
   #[ORM\GeneratedValue]
   #[ORM\Column]
+  #[Groups(['contact:read'])]
   private ?int $id = null;
 
+  #[Groups(['contact:read'])]
   #[ORM\Column(length: 255)]
   private ?string $nom = null;
 
+  #[Groups(['contact:read'])]
   #[ORM\Column(length: 255, nullable: true)]
   private ?string $prenom = null;
 
+  #[Groups(['contact:read'])]
   #[ORM\Column(length: 255, nullable: true)]
   private ?string $fonction = null;
 
+  #[Groups(['contact:read'])]
   #[ORM\Column(length: 255, nullable: true)]
   private ?string $email = null;
 
+  #[Groups(['contact:read'])]
   #[ORM\Column(length: 255, nullable: true)]
   private ?string $telephone = null;
 
@@ -78,7 +85,7 @@ class Contact
     return $this->email;
   }
 
-  public function setEmail(string $email): static
+  public function setEmail(?string $email): static
   {
     $this->email = $email;
 
@@ -90,7 +97,7 @@ class Contact
     return $this->telephone;
   }
 
-  public function setTelephone(string $telephone): static
+  public function setTelephone(?string $telephone): static
   {
     $this->telephone = $telephone;
 
